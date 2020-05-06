@@ -60,7 +60,6 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
         console.log(res)
         return res
       })
-      .then((data) => data.json())
       .then((data) => {
         for(i = 0; i < data.length; i++) {
           if (data[i].clearance_code_inc_type === 'THEFT FROM AUTO') {
