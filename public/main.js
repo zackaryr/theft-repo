@@ -72,3 +72,4 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
           data[i].forEach(getTheftFromAuto);
         }
       });
+console.log(theft_from_auto);
