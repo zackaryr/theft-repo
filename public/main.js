@@ -58,10 +58,11 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       .then(res => res.json())
       .then((data) => {
         console.log(data)
-        for(i = 0; i < data.length; i++) {
-          theft_from_auto.push(data[i])
+        for (i in data) {
+          if (i == 'THEFT FROM AUTO') {
+            for (j = 0; j < i.length; j++) {
+              theft_from_auto.push([i[j].Latitude, i[j].Longitude])
+            }
+          }
         }
-      })
-      .then((theft_from_auto) => {
-        console.log(theft_from_auto)
       });
