@@ -61,7 +61,7 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
         for (i in data) {
           if (i == 'THEFT FROM AUTO') {
             for (j = 0; j < i.length; j++) {
-              theft_from_auto.push([i[j].Latitude, i[j].Longitude])
+              console.log([i[j].Latitude, i[j].Longitude])
             }
           }
         }
