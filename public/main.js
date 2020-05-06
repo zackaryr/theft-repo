@@ -54,10 +54,11 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       auto_stolen = [];
       theft = [];
 
-      fetch('https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json')
-      .then((response) => {
-        console.log(response);
-        return response
+      fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        return res
       })
       .then((data) => data.json())
       .then((data) => {
