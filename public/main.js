@@ -59,6 +59,6 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       .then((data) => {
         console.log(data)
         for(i = 0; i < data.length; i++) {
-          console.log(data[i])
+          console.log(i)
         }
       });
