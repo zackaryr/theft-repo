@@ -47,6 +47,12 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
         }
     }
 
+    function getTheftFromAuto(theftArray) {
+      if (theftArray.CrimeType == 'THEFT FROM AUTO') {
+        theft_from_auto.push([theftArray.Latitude, theftArray.Longitude])
+      }
+    } 
+
     mymap.on('click', onMapClick);
 
       //FINAL PROJECT CODE STARTS HERE _ TO REPLACE FOODLOCS
@@ -62,9 +68,7 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       })
       .then((data) => {
         for (i in data) {
-          console.log(data[i])
-          if (data[i] == 'THEFT FROM AUTO') {
-            console.log(data[i])
-          }
+          console.log(data[i]);
+          data[i].forEach(getTheftFromAuto);
         }
       });
