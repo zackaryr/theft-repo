@@ -62,10 +62,6 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       })
       .then((data) => {
         for (i in data) {
-          if (data[i] == 'THEFT FROM AUTO') {
-            for (j in data[i]) {
-              console.log(j)
-            }
-          }
+          console.log(data[i])
         }
       });
