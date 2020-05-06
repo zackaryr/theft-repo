@@ -47,12 +47,6 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
         }
     }
 
-    function getTheftFromAuto(theftArray) {
-      if (theftArray.CrimeType == 'THEFT FROM AUTO') {
-        theft_from_auto.push([theftArray.Latitude, theftArray.Longitude])
-      }
-    } 
-
     mymap.on('click', onMapClick);
 
       //FINAL PROJECT CODE STARTS HERE _ TO REPLACE FOODLOCS
@@ -63,13 +57,18 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
       .then(res => res.json())
       .then((data) => {
-        console.log(data)
-        return data
-      })
-      .then((data) => {
-        for (i in data) {
-          console.log(data[i]);
-          data[i].forEach(getTheftFromAuto);
+        for(i = 0; i < data.length; i++) {
+          if (data[i].CrimeType === 'THEFT FROM AUTO') {
+            theft_from_auto.push([data[i].latitude, data[i].longitude])
+          }
+          if (data[i].CrimeType === 'AUTO, STOLEN') {
+            auto_stolen.push([data[i].latitude, data[i].longitude])
+          }
+          if (data[i].CrimeType === 'THEFT') {
+              theft.push([data[i].latitude, data[i].longitude])
+          }
         }
       });
 console.log(theft_from_auto);
+console.log(auto_stolen);
+console.log(theft);
