@@ -62,13 +62,13 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       })
       .then((data) => {
         for(i = 0; i < data.length; i++) {
-          if (data[i].clearance_code_inc_type === 'THEFT FROM AUTO') {
+          if (data[i].CrimeType === 'THEFT FROM AUTO') {
             theft_from_auto.push([data[i].latitude, data[i].longitude])
           }
-          if (data[i].clearance_code_inc_type === 'AUTO, STOLEN') {
+          if (data[i].CrimeType === 'AUTO, STOLEN') {
             auto_stolen.push([data[i].latitude, data[i].longitude])
           }
-          if (data[i].clearance_code_inc_type === 'THEFT') {
+          if (data[i].CrimeType === 'THEFT') {
               theft.push([data[i].latitude, data[i].longitude])
           }
         }
