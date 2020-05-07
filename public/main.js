@@ -55,8 +55,8 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       theft = [];
 
       fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
+      .then(res => res.json())
       .then((data) => {
-        console.log(data)
         console.log(Array.isArray(data))
         return data
       })
