@@ -15,37 +15,12 @@ app.use(express.static('public'));
 function processDataForFrontEnd(req, res) {
   const baseURL = 'https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json'; // Enter the URL for the data you would like to retrieve here
 
-    fetch(baseURL)
-      .then((r) => r.json())
-      .then((data) => {
-        return data
-      })
-
-      .then((data) => {
-        console.log("lol", data);
-        const refined = data.map((m) => ({
-          CrimeType: m.clearance_code_inc_type,
-          Latitude: m.latitude,
-          Longitude: m.longitude,
-          Date: m.date,
-          Sector: m.pgpd_sector
-        }));
-         
-          return refined
-        })
-
-        .then((data) => {
-          console.log("hehe", data)
-          return data.reduce((c, current) => {
-            if (!c[current.CrimeType]) {
-
-              c[current.CrimeType] = [];
-            }
-            c[current.CrimeType].push(current);
-            return c;
-          }, {});
-        })
-
+  fetch(baseURL)
+  .then((response) => {
+    console.log(response);
+    return response
+  })
+  .then((data) => data.json())
         .then((data) => {
           console.log(data);
           res.send({ data: data }); 
