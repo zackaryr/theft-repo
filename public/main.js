@@ -60,7 +60,8 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
         return data
       })
       .then((data) => {
-        console.log(data.length);
+        theft_array = data.map(data => data.CrimeType, data.Latitude, data.Longitude);
+        console.log(theft_array);
         for (i = 0; i < data.length; i++) {
           if (data[i].CrimeType === 'THEFT FROM AUTO') {
             theft_from_auto.push([data[i].Latitude, data[i].Longitude])
