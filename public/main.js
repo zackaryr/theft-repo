@@ -57,22 +57,19 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
       .then(res => res.json())
       .then((res) => {
-        console.log(Array.isArray(res));
-        console.log(Object.getOwnPropertyNames(res));
+        console.log(res);
         return res
       })
       .then((res) => {
-        theft_array = res.map(res => res.CrimeType, res.Latitude, res.Longitude);
-        console.log(theft_array);
-        for (i = 0; i < data.length; i++) {
-          if (data[i].CrimeType === 'THEFT FROM AUTO') {
-            theft_from_auto.push([data[i].Latitude, data[i].Longitude])
+        for (i = 0; i < res.length; i++) {
+          if (res[i].CrimeType === 'THEFT FROM AUTO') {
+            theft_from_auto.push([data[i].Latitude, res[i].Longitude])
           }
-          if (data[i].CrimeType === 'AUTO, STOLEN') {
-            auto_stolen.push([data[i].Latitude, data[i].Longitude])
+          if (res[i].CrimeType === 'AUTO, STOLEN') {
+            auto_stolen.push([res[i].Latitude, res[i].Longitude])
           }
-          if (data[i].CrimeType === 'THEFT') {
-            theft.push([data[i].Latitude, data[i].Longitude])
+          if (res[i].CrimeType === 'THEFT') {
+            theft.push([res[i].Latitude, res[i].Longitude])
           }
         }
       });
