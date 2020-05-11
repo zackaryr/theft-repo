@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Maps Lab</title>
+    <title>PG County Theft Map</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -19,10 +20,16 @@
   <body>
     <div class="container">
       <div class="wrapper">
-        <div class="header">Frontend Libraries: Maps Lab</div>
+        <div class="header">PG COUNTY THEFT MAP</div>
+        <div class="links">
+          <ul>
+            <li><a href="">Documentation</a></li>
+            <li><a href="">About</a></li>
+          </ul>
+        </div>
         <div id="mapid">
         </div>
-        <div class="footer">
+        <div class="buttons">
           <button onclick="onTheftFromAuto()">Show Theft From Auto</button>
           <button onclick="onTheft()">Show Theft</button>
           <button onclick="onAutoStolen()">Show Auto, Stolen</button>
