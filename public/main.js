@@ -9,53 +9,45 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
     }).addTo(mymap);
 
     var popup = L.popup();
-    var tfa = 1;
+    var markers = L.layerGroup().addTo(mymap);
 
     function onMapClick(e) {
       popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(mymap);
-}
+};
     function onTheftFromAuto() {
-        if (tfa === 1) {
-            theft_from_auto.forEach((element) => {
-                var from_auto = L.marker(element).addTo(mymap)
-            })
-            tfa === 0;
-        }
-        if (tfa === 0) {
-            theft_from_auto.forEach((element) => {
-            var from_auto = L.marker(element).remove(mymap)
-            })
-          tfa === 1
-        }
+      theft_from_auto.forEach(element => {
+        L.marker(element).addTo(markers)
+      })
     };
 
     function onTheft() {
-        if (theftToggle === 1) {
-            theft.forEach((element) => {
-                var theftmarker = L.marker(element).addTo(mymap)
-            })
-            theftToggle === 0;
-        }
-        if (theftToggle === 0) {
-            theft.forEach((element) => {
-                var theftmarker = L.marker(element).remove(mymap)
-            })
-            theftToggle === 1;
-        }
-    }
+      theft.forEach(element => {
+        L.marker(element).addTo(markers)
+      })
+    };
+
+    function onAutoStolen() {
+      auto_stolen.forEach(element => {
+        L.marker(element).addTo(markers)
+      })
+    };
+    
+    function clearMarkers() {
+      markers.clearLayers();
+    };
 
     mymap.on('click', onMapClick);
 
-      //FINAL PROJECT CODE STARTS HERE _ TO REPLACE FOODLOCS
+      
       theft_from_auto = [];
       auto_stolen = [];
       theft = [];
 
 
-      fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
+      fetch('/api')
       .then((res) => res.json())
       .then((data) => {
         const theft_array = data.data;
