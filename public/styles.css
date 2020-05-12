@@ -38,13 +38,17 @@ button {
   padding-left: 5px;
   font-family: 'Bebas Neue', cursive;
   font-size: large;
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
 }
 
 button:hover{
   background-color: red;
 }
 .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 10px;
 }
 
@@ -57,7 +61,7 @@ ul li{
   background-color: white;
   margin-left: 5px;
   margin-right: 5px;
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
 }
 
 ul li:hover {
@@ -93,9 +97,44 @@ a {
 }
 
 #docLink {
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
 }
 
 #docLink:hover {
   box-shadow: 3px 3px 3px red;
+}
+
+#analysis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  font-size: medium;
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  border-radius: 4px;
+  width: 35%;
+  transition-duration: 0.6s;
+  padding: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px;
+  width: 100%
+}
+
+#chart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: flex-start;
+  width: 85%;
+  padding: 10px;
+  overflow-wrap: break-word;
+  margin: 25px 50px;
 }

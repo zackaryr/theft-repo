@@ -10,6 +10,7 @@
       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
       crossorigin=""
     />
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script
       src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
@@ -27,13 +28,25 @@
             <li><a href="./about.html">About</a></li>
           </ul>
         </div>
+        <div class="content">
         <div id="mapid">
+        </div>
+        <div id="analysis">
+        </div>
         </div>
         <div class="buttons">
           <button onclick="onTheftFromAuto()">Show Theft From Auto</button>
           <button onclick="onTheft()">Show Theft</button>
           <button onclick="onAutoStolen()">Show Auto, Stolen</button>
-          <button onclick="clearMarkers()">Clear Markers</button>
+          <button onclick="onAssault()">Show Assault</button>
+          <button onclick="onBANDE()">Show Breaking and Entering</button>
+          <button onclick="onRobbery()">Show Robbery</button>
+          <button onclick="callAll(); inDepth();">In-Depth Analysis</button>
+          <button onclick="clearMarkers()">Clear Markers and Text</button>
+        </div>
+        <div id="chart">
+          <div id="chartContainer" style="height: 480px; width: 100%;"></div>
+          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         </div>
       </div>
       <script src="main.js"></script>
