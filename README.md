@@ -11,12 +11,18 @@ User Manual: ./docs/user.md
 Dev Manual:
 
 You will need Homebrew(to help with installing packages), node.js, and npm
+Required dependancies:
+    babel
+    express
+    node-fetch
+    nodemon
+    node.js Heroku buildpack
 
 To run this application on a server:
 
 Go to a terminal, type in the command "npm start", open a browser window, navigate to "localhost:3000"
 
-There are no tests but in the cosle log of this application there is an object called "Theft Array" from which all functions in this application depend on. If that is not showing up in the log, you have big problems.
+There are no tests but in the console log of this application there is an object called "Theft Array" from which all functions in this application depend on. If that is not showing up in the log, you have big problems.
 
 API:
 
