@@ -43,6 +43,7 @@ button {
 
 button:hover{
   background-color: red;
+  color: white;
 }
 .buttons {
   display: flex;
@@ -52,16 +53,22 @@ button:hover{
   padding: 10px;
 }
 
-ul li{
+ul {
+  padding: 10px;
+  margin: 0;
+}
+
+li {
   display: inline;
   font-size: large;
   font-family: 'Bebas Neue', cursive;
   text-decoration: none;
   padding: 10px;
   background-color: white;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 10px;
+  border: 10px;
   transition-duration: 0.6s;
+  border-radius: 4px;
 }
 
 ul li:hover {
@@ -80,6 +87,11 @@ a {
   text-decoration: none;
   text-emphasis: none;
   color: black;
+  transition-duration: 0.6s;
+}
+
+a:hover {
+  color: white;
 }
 
 .textBlock {
@@ -107,7 +119,7 @@ a {
 #analysis {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: white;
   padding: 10px;

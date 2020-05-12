@@ -48,6 +48,11 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       });
       var node= document.getElementById("analysis");
       node.querySelectorAll('*').forEach(n => n.remove());
+      var para = document.createElement("h1");
+      var node = document.createTextNode("Analysis Section");
+      para.appendChild(node);
+      var element = document.getElementById("analysis");
+      element.appendChild(para);
       len_array = [];
       
       const theft_from_auto_len = theft_from_auto.length;
@@ -142,37 +147,49 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       chart.render();
     };
 
+    var para = document.createElement("h1");
+    var node = document.createTextNode("Analysis Section");
+    para.appendChild(node);
+    var element = document.getElementById("analysis");
+    element.appendChild(para);
+
     function onTheftFromAuto() {
+      markers.clearLayers();
       theft_from_auto.forEach(element => {
         L.marker(element).addTo(markers)
       })
     };
 
     function onTheft() {
+      markers.clearLayers();
       theft.forEach(element => {
         L.marker(element).addTo(markers)
       })
     };
 
     function onAutoStolen() {
+      markers.clearLayers();
       auto_stolen.forEach(element => {
         L.marker(element).addTo(markers)
       })
     };
 
     function onAssault() {
+      markers.clearLayers();
       assault.forEach(element => {
         L.marker(element).addTo(markers)
       })
     };
 
     function onBANDE() {
+      markers.clearLayers();
       b_and_e.forEach(element => {
         L.marker(element).addTo(markers)
       })
     };
 
     function onRobbery() {
+      markers.clearLayers();
       robbery.forEach(element => {
         L.marker(element).addTo(markers)
       })
@@ -182,6 +199,13 @@ const mymap = L.map('mapid').setView([38.9869, -76.9426], 15);
       markers.clearLayers();
       var node= document.getElementById("analysis");
       node.querySelectorAll('*').forEach(n => n.remove());
+      var node= document.getElementById("chartContainer");
+      node.querySelectorAll('*').forEach(n => n.remove());
+      var para = document.createElement("h1");
+      var node = document.createTextNode("Analysis Section");
+      para.appendChild(node);
+      var element = document.getElementById("analysis");
+      element.appendChild(para);
     };
 
     mymap.on('click', onMapClick);
