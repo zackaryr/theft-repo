@@ -77,3 +77,25 @@ a {
   text-emphasis: none;
   color: black;
 }
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  font-size: medium;
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  border-radius: 4px;
+  width: 80%;
+}
+
+#docLink {
+  transition-duration: 0.4s;
+}
+
+#docLink:hover {
+  box-shadow: 3px 3px 3px red;
+}
