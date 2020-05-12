@@ -11,11 +11,12 @@ User Manual: ./docs/user.md
 Dev Manual:
 
 You will need Homebrew(to help with installing packages), node.js, and npm
-Required dependancies:
-    babel
-    express
-    node-fetch
-    nodemon
+
+Required dependancies: 
+    babel, 
+    express, 
+    node-fetch, 
+    nodemon, 
     node.js Heroku buildpack
 
 To run this application on a server:
